@@ -1,5 +1,5 @@
 {
-  "name": "livestore-example-dist-todomvc-solid",
+  "name": "livestore-example-src-todomvc-solid",
   "version": "0.0.0",
   "description": "",
   "license": "MIT",
@@ -10,10 +10,10 @@
     "start": "vite"
   },
   "dependencies": {
-    "@livestore/livestore": "0.1.0",
+    "@livestore/livestore": "workspace:*",
+    "@livestore/solid": "workspace:*",
     "@livestore/wa-sqlite": "1.0.1-dev.29",
-    "@livestore/web": "0.1.0",
-    "@livestore/solid": "0.1.0",
+    "@livestore/web": "workspace:*",
     "@opentelemetry/api": "^1.9.0",
     "effect": "3.10.12",
     "solid-js": "^1.8.11",
