@@ -10,7 +10,7 @@ const config = getDefaultConfig(__dirname)
 config.resolver.unstable_enableSymlinks = true
 config.resolver.unstable_enablePackageExports = true
 
-addLiveStoreDevtoolsMiddleware(config, { schemaPath: './src/schema/index.ts' })
+addLiveStoreDevtoolsMiddleware(config, { schemaPath: './src/livestore/schema.ts' })
 
 // console.log(config)
 module.exports = config

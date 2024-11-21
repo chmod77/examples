@@ -1,22 +1,22 @@
-import { querySQL, sql } from '@livestore/livestore'
+import { queryDb } from '@livestore/livestore'
 import { useQuery } from '@livestore/react'
-import { Schema } from 'effect'
 import React from 'react'
 import { FlatList } from 'react-native'
 
-import { tables } from '../schema/index.ts'
+import { app$ } from '../livestore/queries.ts'
+import { tables } from '../livestore/schema.ts'
 import { Todo } from './Todo.tsx'
 
-const filterClause$ = querySQL(sql`select filter from app`, {
-  schema: Schema.Array(tables.app.schema.pipe(Schema.pick('filter'))).pipe(Schema.headOrElse()),
-  map: ({ filter }) => `where ${filter === 'all' ? '' : `completed = ${filter === 'completed'} and `}deleted is null`,
-  label: 'filterClause',
-})
-
-const visibleTodos$ = querySQL((get) => sql`select * from todos ${get(filterClause$)}`, {
-  schema: Schema.Array(tables.todos.schema),
-  label: 'visibleTodos',
-})
+const visibleTodos$ = queryDb(
+  (get) => {
+    const { filter } = get(app$)
+    return tables.todos.query.where({
+      deleted: null,
+      completed: filter === 'all' ? undefined : filter === 'completed',
+    })
+  },
+  { label: 'visibleTodos' },
+)
 
 export const ListTodos: React.FC = () => {
   const visibleTodos = useQuery(visibleTodos$)
