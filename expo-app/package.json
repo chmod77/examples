@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "14.0.4",
-    "@livestore/devtools-expo": "0.0.58-dev.13",
+    "@livestore/devtools-expo": "0.2.0-dev.1",
     "@livestore/expo": "0.2.0-dev.1",
     "@livestore/livestore": "0.2.0-dev.1",
     "@livestore/react": "0.2.0-dev.1",
