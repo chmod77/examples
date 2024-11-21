@@ -1,1 +1,1 @@
-See the [Expo setup guide](https://preview.livestore.dev/getting-started/expo).
+See the [Expo setup guide](https://livestore.dev/getting-started/expo).
