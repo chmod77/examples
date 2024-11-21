@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "livestore-expo",
-    "slug": "livestore-expo",
+    "name": "expo-todomvc",
+    "slug": "expo-todomvc",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
